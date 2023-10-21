@@ -7,7 +7,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"    
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "husky": {
     "hooks": {
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@expo/webpack-config": "^19.0.0",
+    "@react-native-async-storage/async-storage": "^1.19.3",
     "@types/react-router-native": "^6.4.0",
     "@types/yup": "^0.32.0",
     "expo": "~49.0.15",
