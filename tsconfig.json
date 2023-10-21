@@ -31,6 +31,6 @@
     "skipLibCheck": true,
     "resolveJsonModule": true
   },
-  "include": ["src/**/*", ".eslintrc.js", "commitlint.config.js"],
+  "include": ["src/**/*", ".eslintrc.js", "commitlint.config.js", "./App.tsx"],
   "exclude": ["node_modules"]
 }
