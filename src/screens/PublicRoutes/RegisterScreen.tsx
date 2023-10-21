@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Formik } from 'formik';
 import { TextInput, View, Button } from 'react-native';
+import { useNavigate } from 'react-router-native';
+
+import AuthContext from '../../context/AuthContext';
 
 const initialValues = {
   username: '',
@@ -10,6 +13,17 @@ const initialValues = {
 };
 
 const RegisterScreen = () => {
+  const { login } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
+  const registerUser = () => {
+    login('asdsadasds');
+  };
+  const handleLoginOnPress = () => {
+    navigate('/login');
+  };
+
   return (
     <Formik
       initialValues={initialValues}
@@ -38,7 +52,9 @@ const RegisterScreen = () => {
               value={values.password}
               onChangeText={handleChange('password')}
             />
-            <Button onPress={handleSubmit} title="Register" />
+            <Button onPress={registerUser} title="Register" />
+
+            <Button onPress={handleLoginOnPress} title="Or Login" />
           </View>
         );
       }}
