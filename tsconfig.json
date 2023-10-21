@@ -1,6 +1,36 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
-  }
+    "target": "ESNext",
+    "module": "CommonJS",
+    "jsx": "react-native",
+    "rootDir": "./src",
+    "baseUrl": "./",
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@config/*": ["./src/config/*"],
+      "@assets/*": ["./assets/*"],
+      "@components/*": ["./src/components/*"],
+      "@screens/*": [".src/screens/*"],
+      "@navigation/*": ["./src/navigation/*"],
+      "@redux/*": ["./src/redux/*"],
+      "@helpers/*": ["./src/helpers/*"],
+      "@services/*": ["./src/services/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@context/*": ["./src/context/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@types/*": ["./src/@types/*"]
+    },
+    "typeRoots": ["./node_modules/@types", "./src/@types"],
+    "noEmit": false,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true
+  },
+  "include": ["src/**/*", ".eslintrc.js", "commitlint.config.js"],
+  "exclude": ["node_modules"]
 }
