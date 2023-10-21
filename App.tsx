@@ -1,45 +1,49 @@
 import React from 'react';
-import { StyleSheet, View, TouchableWithoutFeedback, TextInput } from 'react-native';
+import { NativeRouter } from 'react-router-native';
 
 export default function App() {
   return (
-    <View style={styles.container}> 
-      <TouchableWithoutFeedback>
-        <TextInput style={styles.input} placeholder='Username' />
-      </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback>
-        <TextInput style={styles.input} placeholder='First name' />
-      </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback>
-        <TextInput style={styles.input} placeholder='Last name' />
-      </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback>
-        <TextInput style={styles.input} placeholder='Password' />
-      </TouchableWithoutFeedback>
-    </View>
+    <NativeRouter>
+      <Routes>
+        
+      </Routes>
+    </NativeRouter>
+    // <View style={styles.container}>
+    //   <TouchableWithoutFeedback>
+    //     <TextInput style={styles.input} placeholder='Username' />
+    //   </TouchableWithoutFeedback>
+    //   <TouchableWithoutFeedback>
+    //     <TextInput style={styles.input} placeholder='First name' />
+    //   </TouchableWithoutFeedback>
+    //   <TouchableWithoutFeedback>
+    //     <TextInput style={styles.input} placeholder='Last name' />
+    //   </TouchableWithoutFeedback>
+    //   <TouchableWithoutFeedback>
+    //     <TextInput style={styles.input} placeholder='Password' />
+    //   </TouchableWithoutFeedback>
+    // </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#FFFFAA',
     alignItems: 'center',
+    backgroundColor: '#FFFFAA',
+    flex: 1,
     justifyContent: 'center',
   },
 
   input: {
-    margin: 16,
-    width: 300,
-    height: 50,
-    textAlign: "left",
-    padding: 15,
-    backgroundColor: "green",
+    backgroundColor: 'green',
+    borderColor: '#FFBB00',
     borderRadius: 5,
-    borderColor: "#FFBB00",
     borderWidth: 2,
-    color: "#FFF",
-    fontSize: 20
+    color: '#FFF',
+    fontSize: 20,
+    height: 50,
+    margin: 16,
+    padding: 15,
+    textAlign: 'left',
+    width: 300,
   },
-  
 });
