@@ -7,12 +7,12 @@ import AuthProvider from './src/context/AuthProvider';
 import AuthContext from './src/context/AuthContext';
 
 export default function App() {
-  const { isLoggedIn } = useContext(AuthContext);
+  const { token } = useContext(AuthContext);
 
   return (
     <AuthProvider>
       <NativeRouter>
-        {isLoggedIn ? <PrivateRoutes /> : <PublicRoutes />}
+        {token ? <PrivateRoutes /> : <PublicRoutes />}
       </NativeRouter>
     </AuthProvider>
     // <View style={styles.container}>
