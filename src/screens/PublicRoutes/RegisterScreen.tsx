@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { Formik } from 'formik';
-import { TextInput, View, Button } from 'react-native';
+import { View, Button } from 'react-native';
 import { useNavigate } from 'react-router-native';
 
 import AuthContext from '../../context/AuthContext';
+import FormInputValue from '../../components/Inputs/FormInputValue';
 
 const initialValues = {
   username: '',
@@ -29,29 +30,13 @@ const RegisterScreen = () => {
       initialValues={initialValues}
       onSubmit={values => console.log(values)}
     >
-      {({ handleChange, handleSubmit, values }) => {
+      {({ handleSubmit }) => {
         return (
           <View>
-            <TextInput
-              placeholder="Username"
-              value={values.username}
-              onChangeText={handleChange('user_name')}
-            />
-            <TextInput
-              placeholder="First name"
-              value={values.firstname}
-              onChangeText={handleChange('first_name')}
-            />
-            <TextInput
-              placeholder="Last name"
-              value={values.lastname}
-              onChangeText={handleChange('last_name')}
-            />
-            <TextInput
-              placeholder="Password"
-              value={values.password}
-              onChangeText={handleChange('password')}
-            />
+            <FormInputValue name="user_name" placeholder="Username" />
+            <FormInputValue name="first_name" placeholder="Firstname" />
+            <FormInputValue name="last_name" placeholder="Lastname" />
+            <FormInputValue name="password" placeholder="Password" />
             <Button onPress={registerUser} title="Register" />
 
             <Button onPress={handleLoginOnPress} title="Or Login" />
