@@ -7,12 +7,15 @@ import AuthProvider from './src/context/AuthProvider';
 import AuthContext from './src/context/AuthContext';
 
 export default function App() {
-  const { token } = useContext(AuthContext);
+  const Routes = () => {
+    const { token } = useContext(AuthContext);
+    return token ? <PrivateRoutes /> : <PublicRoutes />;
+  };
 
   return (
     <AuthProvider>
       <NativeRouter>
-        {token ? <PrivateRoutes /> : <PublicRoutes />}
+        <Routes />
       </NativeRouter>
     </AuthProvider>
     // <View style={styles.container}>

@@ -9,9 +9,7 @@ const BaseForm = ({ initialValues, validationSchema, children }) => {
       onSubmit={values => console.log(values)}
       validationSchema={validationSchema}
     >
-      {({ handleSubmit }) => {
-        return <View>{children}</View>;
-      }}
+      <View>{children}</View>
     </Formik>
   );
 };
