@@ -19,10 +19,10 @@ const RegisterScreen = () => {
 
   const navigate = useNavigate();
 
-  const registerUser = () => {
+  const handleSubmit = () => {
     login('asdsadasds');
   };
-  const handleLoginOnPress = () => {
+  const toLoginScreen = () => {
     navigate('/login');
   };
 
@@ -35,9 +35,9 @@ const RegisterScreen = () => {
       <FormInputValue name="first_name" placeholder="Firstname" />
       <FormInputValue name="last_name" placeholder="Lastname" />
       <FormInputValue name="password" placeholder="Password" />
-      <Button onPress={registerUser} title="Register" />
+      <Button onPress={handleSubmit} title="Register" />
 
-      <Button onPress={handleLoginOnPress} title="Or Login" />
+      <Button onPress={toLoginScreen} title="Or Login" />
     </BaseForm>
   );
 };
