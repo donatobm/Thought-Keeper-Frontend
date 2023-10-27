@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-native';
 import AuthContext from '../../context/AuthContext';
 import FormInputValue from '../../components/Inputs/FormInputValue';
 import BaseForm from '../../components/Forms/BaseForm';
+import { registerValidationSchema } from '../../helpers/authValidations';
 
 const initialValues = {
   username: '',
@@ -26,7 +27,10 @@ const RegisterScreen = () => {
   };
 
   return (
-    <BaseForm initialValues={initialValues}>
+    <BaseForm
+      initialValues={initialValues}
+      validationSchema={registerValidationSchema}
+    >
       <FormInputValue name="user_name" placeholder="Username" />
       <FormInputValue name="first_name" placeholder="Firstname" />
       <FormInputValue name="last_name" placeholder="Lastname" />

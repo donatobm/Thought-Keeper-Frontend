@@ -2,11 +2,12 @@ import React from 'react';
 import { View } from 'react-native';
 import { Formik } from 'formik';
 
-const BaseForm = ({ initialValues, children }) => {
+const BaseForm = ({ initialValues, validationSchema, children }) => {
   return (
     <Formik
       initialValues={initialValues}
       onSubmit={values => console.log(values)}
+      validationSchema={validationSchema}
     >
       {({ handleSubmit }) => {
         return <View>{children}</View>;
