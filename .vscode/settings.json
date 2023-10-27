@@ -10,7 +10,8 @@
     ],
     "conventionalCommits.scopes": [
       "styles",
-      "ui"
+      "ui",
+      "helpers"
     ]
   }
   
