@@ -1,15 +1,15 @@
 import React, { useEffect, useContext } from 'react';
 import { useNavigate, useRoutes } from 'react-router-native';
-import RegisterScreen from './PublicRoutes/RegisterScreen';
-import LoginScreen from './PublicRoutes/LoginScreen';
 import AuthContext from '../context/AuthContext';
+import LoginScreen from './PublicRoutes/LoginScreen';
+import RegisterScreen from './PublicRoutes/RegisterScreen';
 
 const PublicRoutes = () => {
   const { token } = useContext(AuthContext);
   const navigate = useNavigate();
   const screens = useRoutes([
-    { path: '/register', element: <RegisterScreen /> },
     { path: '/login', element: <LoginScreen /> },
+    { path: '/register', element: <RegisterScreen /> },
     { path: '*', element: <RegisterScreen /> },
   ]);
 
